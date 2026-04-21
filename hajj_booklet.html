@@ -1,0 +1,2321 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#0F766E">
+<title>دليل عيادات الحج — المرجع السريري السريع</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #F5F2EB;
+  --bg-alt: #EBE6DC;
+  --card: #FFFFFF;
+  --card-alt: #FDFBF6;
+  --ink: #1A1F2E;
+  --ink-soft: #4A5264;
+  --ink-faint: #8B93A3;
+  --line: #E3DDD0;
+  --line-strong: #C9C1B0;
+
+  --critical: #B91C1C;
+  --critical-bg: #FEF2F2;
+  --critical-soft: #FCA5A5;
+  --warning: #B45309;
+  --warning-bg: #FEF6E7;
+  --warning-soft: #FBD38D;
+  --stable: #047857;
+  --stable-bg: #ECFDF5;
+  --stable-soft: #6EE7B7;
+
+  --primary: #0F766E;
+  --primary-dark: #134E4A;
+  --primary-soft: #CCF7EF;
+
+  --shadow-sm: 0 1px 2px rgba(20,25,40,0.04), 0 1px 1px rgba(20,25,40,0.02);
+  --shadow-md: 0 4px 12px rgba(20,25,40,0.06), 0 2px 4px rgba(20,25,40,0.04);
+  --shadow-lg: 0 20px 40px rgba(20,25,40,0.10), 0 8px 16px rgba(20,25,40,0.06);
+
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 16px;
+}
+
+[data-theme="dark"] {
+  --bg: #0E1116;
+  --bg-alt: #161B22;
+  --card: #1A1F28;
+  --card-alt: #21262F;
+  --ink: #E6E4DF;
+  --ink-soft: #A9AEBA;
+  --ink-faint: #6B7280;
+  --line: #2A313C;
+  --line-strong: #3A4250;
+
+  --critical: #F87171;
+  --critical-bg: #2A1515;
+  --critical-soft: #7F1D1D;
+  --warning: #FBBF24;
+  --warning-bg: #2A1E0A;
+  --warning-soft: #713F12;
+  --stable: #34D399;
+  --stable-bg: #0C1F17;
+  --stable-soft: #065F46;
+
+  --primary: #2DD4BF;
+  --primary-dark: #0D9488;
+  --primary-soft: #134E4A;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+  padding-bottom: 100px;
+}
+
+::selection { background: var(--primary-soft); color: var(--primary-dark); }
+
+/* ===== HEADER ===== */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Reem Kufi', serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  display: grid;
+  place-items: center;
+  color: white;
+  font-family: 'Reem Kufi', serif;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.brand-text { display: none; }
+@media (min-width: 520px) { .brand-text { display: inline; } }
+
+.search-wrap {
+  flex: 1;
+  position: relative;
+}
+
+.search {
+  width: 100%;
+  padding: 10px 40px 10px 14px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 15px;
+  transition: all 0.2s;
+}
+
+.search:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 15%, transparent);
+}
+
+.search::placeholder { color: var(--ink-faint); }
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: var(--ink-faint);
+  pointer-events: none;
+  font-size: 16px;
+}
+
+.theme-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius);
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.theme-btn:hover { background: var(--bg-alt); transform: translateY(-1px); }
+
+/* ===== HERO ===== */
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 18px 8px;
+}
+
+.hero-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.hero h1 {
+  font-family: 'Reem Kufi', serif;
+  font-size: clamp(26px, 5vw, 38px);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.hero p {
+  font-size: 15px;
+  color: var(--ink-soft);
+  max-width: 640px;
+  line-height: 1.65;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--ink-faint);
+}
+
+.hero-meta span { display: flex; align-items: center; gap: 6px; }
+.hero-meta .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); }
+
+/* ===== QUICK ACTIONS ===== */
+.quick {
+  max-width: 1100px;
+  margin: 24px auto 0;
+  padding: 0 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.quick-btn {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 12px;
+  cursor: pointer;
+  text-align: right;
+  transition: all 0.15s;
+  font-family: inherit;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.quick-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 3px; height: 100%;
+  background: var(--primary);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.quick-btn:hover::before { opacity: 1; }
+.quick-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+.quick-btn.critical { border-color: var(--critical-soft); background: var(--critical-bg); }
+.quick-btn.critical::before { background: var(--critical); opacity: 1; }
+.quick-btn.critical .quick-label { color: var(--critical); }
+
+.quick-icon { font-size: 22px; }
+.quick-label { font-weight: 600; font-size: 14px; }
+.quick-sub { font-size: 11px; color: var(--ink-faint); font-family: 'JetBrains Mono', monospace; }
+
+/* ===== CATEGORIES ===== */
+.cats {
+  max-width: 1100px;
+  margin: 32px auto 12px;
+  padding: 0 18px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.cats::-webkit-scrollbar { display: none; }
+
+.cat {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.cat:hover { color: var(--ink); border-color: var(--line-strong); }
+.cat.active {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+
+/* ===== CASES GRID ===== */
+.cases {
+  max-width: 1100px;
+  margin: 18px auto 0;
+  padding: 0 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.case-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.15s;
+  position: relative;
+  overflow: hidden;
+}
+
+.case-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--line-strong); }
+
+.case-card::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 4px; height: 100%;
+  background: var(--ink-faint);
+}
+
+.case-card[data-severity="critical"]::after { background: var(--critical); }
+.case-card[data-severity="warning"]::after { background: var(--warning); }
+.case-card[data-severity="stable"]::after { background: var(--stable); }
+
+.case-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.case-title {
+  font-family: 'Reem Kufi', serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.case-title-en {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-faint);
+  margin-top: 2px;
+  letter-spacing: 0.02em;
+  direction: ltr;
+  text-align: left;
+}
+
+.sev-badge {
+  flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.sev-badge.critical { background: var(--critical-bg); color: var(--critical); }
+.sev-badge.warning { background: var(--warning-bg); color: var(--warning); }
+.sev-badge.stable { background: var(--stable-bg); color: var(--stable); }
+
+.case-preview {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.case-foot {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+  color: var(--ink-faint);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.case-foot .read-more { color: var(--primary); }
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20,25,40,0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+
+.modal {
+  background: var(--bg);
+  width: 100%;
+  max-width: 760px;
+  max-height: 94vh;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(30px);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 768px) {
+  .modal-overlay { align-items: center; }
+  .modal { border-radius: 20px; max-height: 88vh; }
+}
+
+.modal-overlay.open .modal { transform: translateY(0); }
+
+.modal-head {
+  padding: 20px 22px 16px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  position: relative;
+}
+
+.modal-head::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line-strong);
+}
+
+@media (min-width: 768px) {
+  .modal-head::before { display: none; }
+  .modal-head { padding-top: 24px; }
+}
+
+.modal-title-wrap { flex: 1; padding-top: 4px; }
+
+.modal-title {
+  font-family: 'Reem Kufi', serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.modal-title-en {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin-top: 4px;
+  direction: ltr;
+  text-align: left;
+  letter-spacing: 0.02em;
+}
+
+.modal-close {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink-soft);
+  cursor: pointer;
+  font-size: 18px;
+  display: grid;
+  place-items: center;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.modal-close:hover { background: var(--critical-bg); color: var(--critical); border-color: var(--critical-soft); }
+
+.modal-body {
+  overflow-y: auto;
+  padding: 4px 22px 28px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.section {
+  margin-top: 22px;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  margin-bottom: 10px;
+}
+
+.section-label::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.section h3 {
+  font-family: 'Reem Kufi', serif;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.section p { color: var(--ink-soft); line-height: 1.7; }
+
+.bullet-list { list-style: none; }
+.bullet-list li {
+  padding: 8px 18px 8px 0;
+  position: relative;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  border-bottom: 1px dashed var(--line);
+}
+
+.bullet-list li:last-child { border-bottom: none; }
+
+.bullet-list li::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  right: 4px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.step-list {
+  list-style: none;
+  counter-reset: step;
+}
+
+.step-list li {
+  counter-increment: step;
+  padding: 10px 38px 10px 0;
+  position: relative;
+  color: var(--ink);
+  line-height: 1.65;
+  border-bottom: 1px solid var(--line);
+}
+
+.step-list li:last-child { border-bottom: none; }
+
+.step-list li::before {
+  content: counter(step);
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+
+.alert {
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  margin: 8px 0;
+  border-right: 4px solid;
+  display: flex;
+  gap: 10px;
+}
+
+.alert-icon { font-size: 18px; flex-shrink: 0; }
+.alert-text { font-size: 14px; line-height: 1.55; }
+
+.alert.critical { background: var(--critical-bg); border-color: var(--critical); color: var(--critical); }
+.alert.warning { background: var(--warning-bg); border-color: var(--warning); color: var(--warning); }
+.alert.info { background: var(--primary-soft); border-color: var(--primary); color: var(--primary-dark); }
+
+[data-theme="dark"] .alert.info { color: var(--primary); }
+
+.med-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 6px;
+  border: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.med-table th {
+  background: var(--bg-alt);
+  color: var(--ink-soft);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 10px;
+  text-align: right;
+}
+
+.med-table td {
+  padding: 10px;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  vertical-align: top;
+}
+
+.med-table td:first-child { font-weight: 600; }
+.med-table td:nth-child(2) { font-family: 'JetBrains Mono', monospace; font-size: 13px; direction: ltr; text-align: left; color: var(--primary-dark); }
+[data-theme="dark"] .med-table td:nth-child(2) { color: var(--primary); }
+
+/* ===== FAB ===== */
+.fab {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.fab-main {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--critical);
+  color: white;
+  border: none;
+  box-shadow: 0 8px 24px rgba(185,28,28,0.4);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  font-family: inherit;
+  font-weight: 700;
+  transition: transform 0.2s;
+}
+
+.fab-main:hover { transform: scale(1.05); }
+.fab-main:active { transform: scale(0.95); }
+
+/* ===== EMPTY ===== */
+.empty {
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--ink-faint);
+}
+
+.empty-icon { font-size: 40px; margin-bottom: 10px; opacity: 0.5; }
+
+/* ===== FOOTER ===== */
+.footer {
+  max-width: 1100px;
+  margin: 60px auto 0;
+  padding: 24px 18px 0;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  color: var(--ink-faint);
+  font-size: 13px;
+}
+
+.footer .authors {
+  font-family: 'Reem Kufi', serif;
+  font-weight: 600;
+  color: var(--ink-soft);
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.footer .version {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  opacity: 0.7;
+  margin-top: 8px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.case-card { animation: fadeUp 0.4s both; }
+
+/* stagger */
+.case-card:nth-child(1) { animation-delay: 0.02s; }
+.case-card:nth-child(2) { animation-delay: 0.04s; }
+.case-card:nth-child(3) { animation-delay: 0.06s; }
+.case-card:nth-child(4) { animation-delay: 0.08s; }
+.case-card:nth-child(5) { animation-delay: 0.10s; }
+.case-card:nth-child(6) { animation-delay: 0.12s; }
+.case-card:nth-child(7) { animation-delay: 0.14s; }
+.case-card:nth-child(8) { animation-delay: 0.16s; }
+
+</style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">ح</div>
+      <span class="brand-text">دليل الحج</span>
+    </div>
+    <div class="search-wrap">
+      <input type="search" class="search" id="search" placeholder="ابحث عن حالة، دواء، علامة خطر..." autocomplete="off">
+      <span class="search-icon">⌕</span>
+    </div>
+    <button class="theme-btn" id="themeBtn" aria-label="تبديل الوضع">
+      <span id="themeIcon">☾</span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-kicker">HAJJ · CLINICAL REFERENCE · v1.0</div>
+  <h1>المرجع السريري السريع لعيادات الحج</h1>
+  <p>دليل عملي مختصر للحالات الشائعة في عيادات الحج ومراكز الحرم — تقييم، تدبير أولي، أدوية، ومعايير التحويل. مصمم للاستخدام السريع وقت الحاجة.</p>
+  <div class="hero-meta">
+    <span><span class="dot"></span>25 حالة سريرية</span>
+    <span><span class="dot"></span>بروتوكولات الطوارئ</span>
+    <span><span class="dot"></span>جدول الأدوية والجرعات</span>
+  </div>
+</section>
+
+<!-- ===== QUICK ACTIONS ===== -->
+<div class="quick">
+  <button class="quick-btn critical" data-action="cpr">
+    <div class="quick-icon">♥</div>
+    <div class="quick-label">الإنعاش القلبي</div>
+    <div class="quick-sub">BLS · ACLS</div>
+  </button>
+  <button class="quick-btn critical" data-action="heatstroke">
+    <div class="quick-icon">🌡</div>
+    <div class="quick-label">ضربة الشمس</div>
+    <div class="quick-sub">CRITICAL</div>
+  </button>
+  <button class="quick-btn" data-action="drugs">
+    <div class="quick-icon">⚕</div>
+    <div class="quick-label">جدول الأدوية</div>
+    <div class="quick-sub">DOSES</div>
+  </button>
+  <button class="quick-btn" data-action="emergency">
+    <div class="quick-icon">☎</div>
+    <div class="quick-label">أرقام الطوارئ</div>
+    <div class="quick-sub">HOTLINES</div>
+  </button>
+</div>
+
+<!-- ===== CATEGORIES ===== -->
+<nav class="cats" id="cats"></nav>
+
+<!-- ===== CASES ===== -->
+<main class="cases" id="cases"></main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="authors">د. نسيم و الزميل</div>
+  <div>دليل عيادات الحج — مرجع سريري مختصر</div>
+  <div class="version">v1.0 · DIGITAL EDITION · 1447 هـ</div>
+</footer>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title-wrap">
+        <div class="modal-title" id="modalTitle">—</div>
+        <div class="modal-title-en" id="modalTitleEn">—</div>
+      </div>
+      <button class="modal-close" id="modalClose" aria-label="إغلاق">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ===== FAB ===== -->
+<div class="fab">
+  <button class="fab-main" id="fabEmergency" title="طوارئ" aria-label="إنعاش قلبي طارئ">♥</button>
+</div>
+
+<script>
+// =================================================================
+// DATA — الحالات السريرية
+// =================================================================
+
+const CATEGORIES = [
+  { id: 'all',         label: 'الكل' },
+  { id: 'heat',        label: 'الحرارة' },
+  { id: 'cardiac',     label: 'قلبية' },
+  { id: 'respiratory', label: 'تنفسية' },
+  { id: 'neuro',       label: 'عصبية' },
+  { id: 'gi',          label: 'هضمية واستقلابية' },
+  { id: 'trauma',      label: 'رضوض وإصابات' },
+  { id: 'infectious',  label: 'معدية' },
+  { id: 'other',       label: 'أخرى' },
+];
+
+const CASES = [
+  // ======================== HEAT ========================
+  {
+    id: 'heat-stroke',
+    title: 'ضربة الشمس',
+    titleEn: 'Heat Stroke',
+    category: 'heat',
+    severity: 'critical',
+    preview: 'ارتفاع حرارة الجسم >40°م مع اضطراب عصبي (تشوش، تشنج، غيبوبة). من أخطر حالات الحج.',
+    definition: 'ارتفاع درجة حرارة الجسم الأساسية فوق 40°م مع خلل في الجهاز العصبي المركزي (تشوش، هذيان، تشنج، غيبوبة). التعرق قد يكون موجوداً أو غائباً. تُعتبر من أعلى أسباب الوفاة في موسم الحج.',
+    redFlags: [
+      'غياب التعرق مع جلد حار وجاف',
+      'درجة حرارة الجسم ≥ 40°م',
+      'اضطراب الوعي أو التشنج',
+      'انخفاض ضغط الدم أو تسارع النبض الشديد',
+      'ضيق تنفس أو ألم في الصدر',
+    ],
+    assessment: [
+      'ABC — تأمين المجرى التنفسي والتنفس والدورة',
+      'قياس الحرارة المركزية (مستقيم إن أمكن)',
+      'تقييم مستوى الوعي (GCS) والفحص العصبي',
+      'قياس ضغط الدم، النبض، التنفس، السكر',
+      'البحث عن أسباب أخرى (سكر، سكتة، عدوى)',
+    ],
+    management: [
+      'نقل الحاج فوراً إلى مكان بارد ومظلل',
+      'خلع الملابس الزائدة كلها',
+      'البدء بالتبريد النشط فوراً: رش الماء على الجسم + تشغيل المراوح',
+      'وضع أكياس الثلج على الإبطين، الفخذين، والرقبة (الشرايين الكبيرة)',
+      'فتح وريد وإعطاء محلول ملحي 0.9% — 500 مل كبلعة ثم حسب الحالة',
+      'أكسجين إن كان التشبع < 94%',
+      'مراقبة الحرارة مستمرة وإيقاف التبريد عند 38.5°م لتجنب الارتجاف',
+      'عدم استخدام خافضات الحرارة — غير فعالة وقد تضر الكبد',
+    ],
+    medications: [
+      { name: 'محلول ملحي 0.9%', dose: '500 ml IV bolus, then 1–2 L/h' },
+      { name: 'Diazepam (للتشنج أو الارتجاف)', dose: '5–10 mg IV slow' },
+      { name: 'Oxygen', dose: 'Titrate to SpO2 > 94%' },
+    ],
+    referral: 'كل حالة ضربة شمس مؤكدة تُحوَّل عاجلاً إلى مستشفى مرجعي — حتى بعد استقرار الحرارة. المضاعفات المتأخرة خطيرة (فشل الكبد، الكلى، DIC). أبلغ بالحالة قبل التحويل وأرسل مع مرافق طبي.',
+    documentation: 'وقت البداية، الحرارة الابتدائية والمسار، GCS، الضغط والنبض، السوائل المُعطاة، الأدوية، وقت بدء التبريد، الحرارة عند التحويل.',
+  },
+  {
+    id: 'heat-exhaustion',
+    title: 'الإجهاد الحراري',
+    titleEn: 'Heat Exhaustion',
+    category: 'heat',
+    severity: 'warning',
+    preview: 'أعراض عامة (صداع، غثيان، ضعف، تعرق غزير) بدون اضطراب عصبي. الحرارة <40°م.',
+    definition: 'حالة أخف من ضربة الشمس — أعراض عامة من تعرق غزير، صداع، غثيان، ضعف، وتقلصات عضلية، مع حرارة أقل من 40°م ووعي سليم. قد تتطور إلى ضربة شمس إن لم تُعالج.',
+    redFlags: [
+      'ارتفاع الحرارة > 39.5°م',
+      'تشوش خفيف أو دوخة شديدة',
+      'عدم التحسن خلال ساعة',
+      'تقلصات عضلية شديدة',
+    ],
+    assessment: [
+      'قياس الحرارة، الضغط، النبض',
+      'تقييم الوعي والتوجه',
+      'فحص علامات الجفاف',
+      'قياس السكر',
+    ],
+    management: [
+      'نقل إلى مكان بارد والاستلقاء مع رفع الساقين',
+      'خلع الملابس الزائدة',
+      'محلول ORS فموي إن كان واعياً ولا يتقيأ',
+      'محلول ملحي IV 500–1000 مل إذا كان الجفاف واضحاً أو عدم تحمل الفم',
+      'تبريد سطحي (مناديل مبللة، مراوح)',
+      'مراقبة 30–60 دقيقة قبل تصنيف الحالة',
+    ],
+    medications: [
+      { name: 'ORS', dose: '1 L over 1–2 hours PO' },
+      { name: 'محلول ملحي 0.9%', dose: '500–1000 ml IV' },
+      { name: 'Paracetamol', dose: 'Not effective — avoid' },
+    ],
+    referral: 'تحويل عند: عدم التحسن خلال ساعة، ارتفاع الحرارة لـ ≥39.5°م، أي تغير في الوعي، أو المرضى المسنون وذوو الأمراض المزمنة.',
+    documentation: 'العلامات الحيوية الابتدائية والنهائية، السوائل، استجابة الحاج، الحالة عند الخروج أو التحويل.',
+  },
+  {
+    id: 'dehydration',
+    title: 'الجفاف واضطراب الأملاح',
+    titleEn: 'Dehydration & Electrolyte Disturbance',
+    category: 'heat',
+    severity: 'warning',
+    preview: 'فقدان سوائل وأملاح من التعرق الشديد أو القيء والإسهال. يشمل نقص وارتفاع الصوديوم.',
+    definition: 'فقدان سوائل زائد عن التعويض — شائع جداً في الحج بسبب التعرق الشديد والحرارة. قد يصاحبه نقص أو ارتفاع الصوديوم. الإفراط في شرب الماء بلا أملاح قد يسبب هيبوناتريميا خطيرة.',
+    redFlags: [
+      'انخفاض الضغط (<90 انقباضي) أو تسارع النبض',
+      'انخفاض الوعي أو التشنج (قد يشير لهيبوناتريميا)',
+      'قلة البول أو انعدامه',
+      'جفاف شديد في الأغشية المخاطية',
+    ],
+    assessment: [
+      'تقدير درجة الجفاف (خفيف 3-5%، متوسط 6-9%، شديد ≥10%)',
+      'العلامات الحيوية بما فيها الضغط في الوقوف والاستلقاء',
+      'فحص الأغشية المخاطية والجلد (turgor)',
+      'قياس السكر والأملاح إن أمكن',
+    ],
+    management: [
+      'الخفيف: ORS فموي 50 مل/كغ خلال 4 ساعات',
+      'المتوسط: محلول ملحي 0.9% IV 1–2 لتر في أول ساعتين',
+      'الشديد: بلعة 500–1000 مل IV سريعة، كرر حسب الاستجابة',
+      'إذا اشتبهت بهيبوناتريميا (تشنج، تشوش، شرب ماء كثير): محلول ملحي 0.9% فقط — لا ماء سادة',
+      'تجنب الإعطاء السريع للسوائل في كبار السن وذوي قصور القلب',
+    ],
+    medications: [
+      { name: 'ORS', dose: '50 ml/kg over 4 hours' },
+      { name: 'Normal saline 0.9%', dose: '1–2 L IV over 2 hours' },
+      { name: 'Ondansetron (للقيء)', dose: '4–8 mg IV/IM' },
+    ],
+    referral: 'تحويل عند: الجفاف الشديد، نقص الصوديوم المصحوب بأعراض عصبية، عدم تحمل الفم بعد العلاج، قصور كلوي، أو كبار السن بأمراض مزمنة.',
+    documentation: 'الأعراض، درجة الجفاف، السوائل المُعطاة (نوع وكمية وسرعة)، العلامات الحيوية، إخراج البول.',
+  },
+
+  // ======================== CARDIAC ========================
+  {
+    id: 'acs',
+    title: 'احتشاء عضلة القلب',
+    titleEn: 'Acute Coronary Syndrome / MI',
+    category: 'cardiac',
+    severity: 'critical',
+    preview: 'ألم صدري ضاغط لأكثر من 20 دقيقة مع أعراض مصاحبة. يشمل STEMI و NSTEMI.',
+    definition: 'متلازمة الشريان التاجي الحادة — ألم صدري ضاغط خلف القص قد ينتشر للذراع الأيسر أو الفك أو الظهر، مع تعرق وغثيان وضيق تنفس. قد يكون STEMI (يحتاج تدخل فوري) أو NSTEMI.',
+    redFlags: [
+      'ألم > 20 دقيقة لا يستجيب للنترات',
+      'ضغط منخفض، تعرق بارد، شحوب',
+      'ارتفاع ST في ECG',
+      'اضطراب نظم قلبي أو توقف قلبي',
+      'وذمة رئوية (قصور قلب حاد)',
+    ],
+    assessment: [
+      'ABC + جهاز ECG فوري خلال 10 دقائق',
+      'تاريخ ألم الصدر (بداية، مدة، طبيعة، انتشار)',
+      'فحص القلب والرئتين',
+      'ضغط الدم في الذراعين',
+      'عوامل الخطر (عمر، سكر، ضغط، تدخين، سابقة قلبية)',
+    ],
+    management: [
+      'استلقاء مع رفع الرأس 30–45°، راحة تامة',
+      'أكسجين إذا SpO2 < 94%',
+      'Aspirin 300 مغ للمضغ فوراً',
+      'Clopidogrel 300 مغ PO',
+      'Nitroglycerin تحت اللسان 0.4 مغ (إن لم يكن الضغط < 90)',
+      'Morphine 2–4 مغ IV للألم الشديد',
+      'تثبيت وريد، مراقبة ECG مستمرة',
+      'تحويل فوري لمركز قسطرة قلبية — وقت الوصول لـ PCI هو المفتاح',
+    ],
+    medications: [
+      { name: 'Aspirin', dose: '300 mg PO chewed' },
+      { name: 'Clopidogrel', dose: '300 mg PO loading' },
+      { name: 'Nitroglycerin', dose: '0.4 mg SL, repeat q5min x3' },
+      { name: 'Morphine', dose: '2–4 mg IV' },
+      { name: 'Oxygen', dose: 'If SpO2 < 94%' },
+    ],
+    referral: 'تحويل فوري لأقرب مركز قسطرة قلبية. الوقت عضلة (Time is muscle). أبلغ المركز قبل التحويل وأرسل نسخة من ECG. المرافق الطبي مع دفيبرليتر ضروري.',
+    documentation: 'وقت بداية الألم، ECG (احتفظ بالنسخ)، العلامات الحيوية المتسلسلة، الأدوية المُعطاة وأوقاتها، استجابة الحاج.',
+  },
+  {
+    id: 'angina',
+    title: 'الذبحة الصدرية',
+    titleEn: 'Angina Pectoris',
+    category: 'cardiac',
+    severity: 'warning',
+    preview: 'ألم صدري عابر مرتبط بالمجهود، يزول بالراحة أو النترات خلال 5-15 دقيقة.',
+    definition: 'ألم صدري ناتج عن نقص تروية عابر، عادة مرتبط بالمجهود أو الحرارة، يستجيب للراحة أو النترات. التمييز عن MI مهم — أي ألم يستمر >20 دقيقة أو لا يستجيب يعامل كـ ACS.',
+    redFlags: [
+      'زيادة تكرار أو شدة النوبات (unstable angina)',
+      'ألم بالراحة',
+      'عدم استجابة للنترات',
+      'مدة > 20 دقيقة',
+    ],
+    assessment: [
+      'ECG 12 lead',
+      'تاريخ العلاقة بالمجهود والاستجابة للراحة/النترات',
+      'العلامات الحيوية',
+      'فحص قلبي ورئوي',
+    ],
+    management: [
+      'الراحة التامة',
+      'Aspirin 300 مغ مضغ',
+      'Nitroglycerin 0.4 مغ SL — يُكرر كل 5 دقائق (بحد أقصى 3 مرات)',
+      'أكسجين إذا SpO2 < 94%',
+      'مراقبة ECG',
+      'إذا زال الألم وECG طبيعي — تحويل للتقييم غير العاجل',
+      'إذا استمر الألم أو تغير ECG — عامل كـ MI',
+    ],
+    medications: [
+      { name: 'Aspirin', dose: '300 mg PO chewed' },
+      { name: 'Nitroglycerin', dose: '0.4 mg SL q5min x3' },
+      { name: 'Beta-blocker (if known)', dose: 'Continue home dose' },
+    ],
+    referral: 'تحويل كل نوبة ذبحة أولى أو غير مستقرة. النوبات المعروفة المستقرة التي تستجيب يمكن متابعتها مع نصائح واضحة وعودة عند التدهور.',
+    documentation: 'وصف الألم، العوامل المحفزة، الاستجابة للعلاج، ECG، العلامات الحيوية.',
+  },
+  {
+    id: 'htn-crisis',
+    title: 'ارتفاع ضغط الدم الحاد',
+    titleEn: 'Hypertensive Crisis',
+    category: 'cardiac',
+    severity: 'warning',
+    preview: 'ضغط ≥180/120 — يُفرّق بين طارئة (مع تلف أعضاء) وعاجل (بلا تلف).',
+    definition: 'ارتفاع الضغط لـ ≥180/120 ملم/زئبق. Emergency (مع تلف أعضاء مثل ألم صدري، سكتة، وذمة رئوية، اعتلال عصبي) يحتاج تدخل فوري. Urgency (بلا تلف) يُخفض تدريجياً.',
+    redFlags: [
+      'ألم صدري أو ضيق تنفس',
+      'صداع شديد أو اضطراب رؤية',
+      'أعراض عصبية بؤرية',
+      'وذمة رئوية',
+      'بيلة دموية أو نقص إخراج بول',
+    ],
+    assessment: [
+      'قياس الضغط في كلا الذراعين',
+      'فحص عصبي، قلبي، ورئوي شامل',
+      'فحص قاع العين إن أمكن',
+      'ECG',
+      'تاريخ الأدوية الخافضة وعدم الالتزام',
+    ],
+    management: [
+      'Emergency (مع تلف): تحويل فوري مع خفض تدريجي IV (ليس أكثر من 25% في الساعة الأولى)',
+      'Urgency: خفض تدريجي بالفم على مدى ساعات',
+      'Captopril 25 مغ PO أو Amlodipine 5–10 مغ PO',
+      'مراقبة الضغط كل 15–30 دقيقة',
+      'تجنب الخفض السريع — قد يسبب سكتة دماغية',
+      'معالجة أي ألم أو قلق مصاحب',
+    ],
+    medications: [
+      { name: 'Captopril', dose: '25 mg PO' },
+      { name: 'Amlodipine', dose: '5–10 mg PO' },
+      { name: 'Labetalol (if available)', dose: '10–20 mg IV slow' },
+    ],
+    referral: 'تحويل كل Hypertensive Emergency فوراً. Urgency: تحويل إن لم يستجب خلال ساعتين، أو المريض جديد على التشخيص، أو كبار السن بأمراض مزمنة.',
+    documentation: 'قراءات الضغط المتسلسلة، الأعراض، الأدوية المنزلية، الأدوية المُعطاة والاستجابة.',
+  },
+
+  // ======================== RESPIRATORY ========================
+  {
+    id: 'asthma',
+    title: 'الربو الشعبي',
+    titleEn: 'Acute Asthma',
+    category: 'respiratory',
+    severity: 'warning',
+    preview: 'ضيق تنفس مع صفير، سعال، وضيق صدر. قد يتفاقم بالغبار والمجهود في الحج.',
+    definition: 'نوبة ربو حاد — تضيق القصبات مع صفير، سعال، ضيق صدر، وصعوبة كلام. تصنف خفيفة / متوسطة / شديدة / مهددة للحياة حسب الأعراض والتشبع.',
+    redFlags: [
+      'صدر صامت (غياب الصفير) — علامة خطر كبيرة',
+      'تعب شديد أو نعاس',
+      'SpO2 < 92%',
+      'عدم القدرة على الكلام بجملة كاملة',
+      'تسارع نبض > 120، تنفس > 30',
+      'Peak flow < 33% من المتوقع',
+    ],
+    assessment: [
+      'SpO2، معدل التنفس، النبض',
+      'القدرة على الكلام',
+      'فحص الصدر (صفير، صدر صامت)',
+      'Peak flow إن أمكن',
+      'تاريخ الأدوية واستخدام البخاخ قبل العيادة',
+    ],
+    management: [
+      'الجلوس منتصباً',
+      'أكسجين لرفع SpO2 > 94%',
+      'Salbutamol nebulizer 5 مغ + Ipratropium 500 ميكروغ كل 20 دقيقة x 3',
+      'Prednisolone 40–50 مغ PO أو Hydrocortisone 100 مغ IV',
+      'إن لم يستجب: Magnesium sulfate 2 غ IV على 20 دقيقة',
+      'مراقبة مستمرة — الاستجابة تقاس بالتحسن السريري وSpO2',
+      'إذا صدر صامت أو تدهور: تحويل فوري مع دعم تنفسي',
+    ],
+    medications: [
+      { name: 'Salbutamol neb', dose: '5 mg q20min x3' },
+      { name: 'Ipratropium neb', dose: '500 mcg q20min x3' },
+      { name: 'Prednisolone', dose: '40–50 mg PO' },
+      { name: 'Hydrocortisone', dose: '100 mg IV' },
+      { name: 'Magnesium sulfate', dose: '2 g IV over 20 min' },
+      { name: 'Oxygen', dose: 'Titrate to SpO2 > 94%' },
+    ],
+    referral: 'تحويل عند: عدم الاستجابة لـ 3 جلسات nebulizer، SpO2 < 92%، صدر صامت، نعاس، أو حاجة لدعم تنفسي. حتى المستجيبين من نوبة شديدة يحتاجون ملاحظة.',
+    documentation: 'Peak flow قبل وبعد، SpO2 المتسلسل، الأدوية (وقت وجرعة)، الاستجابة السريرية.',
+  },
+  {
+    id: 'pneumonia',
+    title: 'التهاب الرئة',
+    titleEn: 'Pneumonia',
+    category: 'respiratory',
+    severity: 'warning',
+    preview: 'حمى، سعال منتج، ضيق تنفس، وألم صدري جنبي. استخدم CURB-65 لتقييم الشدة.',
+    definition: 'عدوى حادة لنسيج الرئة — حمى، سعال منتج، ضيق تنفس، ألم صدري جنبي. تشخيص سريري + فحص صدر. في الحج قد يكون بكتيري أو فيروسي (انفلونزا، كوفيد) أو MERS.',
+    redFlags: [
+      'تسارع تنفس > 30',
+      'ضغط انقباضي < 90',
+      'تشوش أو اضطراب وعي',
+      'SpO2 < 92%',
+      'العمر > 65 مع مرض مزمن',
+    ],
+    assessment: [
+      'CURB-65: Confusion, Urea>7, RR≥30, BP<90/60, age≥65 (كل نقطة ≥2 تعني تحويل)',
+      'العلامات الحيوية كاملة + SpO2',
+      'فحص الصدر (crackles, bronchial breathing)',
+      'تاريخ احتكاك بمصابين أو بإبل (MERS)',
+    ],
+    management: [
+      'أكسجين لرفع SpO2 > 94% (أو >88% في COPD)',
+      'بدء مضاد حيوي مبدئي: Amoxicillin 1 غ + Azithromycin 500 مغ (CAP خفيف-متوسط)',
+      'في الحالات الأشد: Ceftriaxone 2 غ IV + Azithromycin',
+      'IV fluids للجفاف',
+      'Paracetamol للحمى',
+      'عزل وقناع إن اشتُبه بـ MERS أو COVID — بلاغ فوري',
+    ],
+    medications: [
+      { name: 'Amoxicillin', dose: '1 g PO TID' },
+      { name: 'Azithromycin', dose: '500 mg PO daily x3' },
+      { name: 'Ceftriaxone', dose: '2 g IV daily' },
+      { name: 'Paracetamol', dose: '1 g PO/IV q6h' },
+    ],
+    referral: 'تحويل عند: CURB-65 ≥ 2، SpO2 < 92%، اشتباه MERS/COVID، قصور قلبي أو كلوي مصاحب، فشل العلاج في 48 ساعة.',
+    documentation: 'الأعراض، نتيجة CURB-65، SpO2 على الهواء، الأدوية، حالة التطعيمات (Pneumococcal, Influenza).',
+  },
+  {
+    id: 'uri',
+    title: 'عدوى الجهاز التنفسي العلوي',
+    titleEn: 'Upper Respiratory Infection / Flu / COVID / MERS',
+    category: 'respiratory',
+    severity: 'stable',
+    preview: 'أعراض شائعة: احتقان، سعال، حمى. تحتاج فرز دقيق لاستبعاد MERS وCOVID.',
+    definition: 'معظم حالات URI في الحج فيروسية (Rhinovirus, Influenza). القلق الأكبر هو MERS-CoV (الاحتكاك بالإبل) وCOVID-19. معايير الفرز والعزل حرجة.',
+    redFlags: [
+      'احتكاك بإبل أو زيارة مزارع — يرفع احتمال MERS',
+      'SpO2 < 94% أو تسارع تنفس',
+      'حمى > 38.5 مع ضيق تنفس',
+      'أعراض مع مرض مزمن',
+    ],
+    assessment: [
+      'تاريخ الاحتكاك (إبل، مصابين، تجمعات)',
+      'بداية الأعراض والمسار',
+      'SpO2 وعلامات حيوية',
+      'فحص الحلق، الأذن، الصدر',
+    ],
+    management: [
+      'عزل فوري وقناع N95 للطاقم إذا اشتبه MERS/COVID',
+      'مسحة COVID + Influenza إن متوفرة',
+      'علاج أعراضي: Paracetamol، مرطبات حلق',
+      'لا مضادات حيوية للفيروسات بلا دليل',
+      'Oseltamivir 75 مغ كل 12 ساعة x5 أيام (للإنفلونزا المؤكدة خلال 48 ساعة)',
+      'إبلاغ فوري لإدارة مكافحة العدوى عن الحالات المشتبهة',
+      'تعليم الحاج بآداب السعال وغسل اليدين',
+    ],
+    medications: [
+      { name: 'Paracetamol', dose: '1 g PO q6h' },
+      { name: 'Oseltamivir', dose: '75 mg PO q12h x5d' },
+      { name: 'Throat lozenges / saline', dose: 'PRN' },
+    ],
+    referral: 'تحويل كل اشتباه MERS أو COVID مع أعراض تنفسية سفلية. الإنفلونزا البسيطة في شخص سليم يمكن علاجها عرضياً مع نصائح للعودة عند التدهور.',
+    documentation: 'تاريخ السفر والاحتكاك، الأعراض، SpO2، تم الإبلاغ أم لا، نتائج المسحات.',
+  },
+
+  // ======================== NEURO ========================
+  {
+    id: 'stroke',
+    title: 'السكتة الدماغية',
+    titleEn: 'Stroke / CVA',
+    category: 'neuro',
+    severity: 'critical',
+    preview: 'خلل عصبي مفاجئ — استخدم FAST. الوقت دماغ. نافذة الـ tPA حرجة.',
+    definition: 'اضطراب مفاجئ في الوظيفة العصبية نتيجة نقص التروية (80%) أو نزف (20%). التعرف السريع وتحويل عاجل خلال ساعات قد ينقذ نسيج الدماغ.',
+    redFlags: [
+      'FAST: Face, Arm, Speech, Time',
+      'تدهور الوعي المفاجئ',
+      'صداع شديد مفاجئ (نزفي؟)',
+      'تشنج مصاحب',
+      'ضعف نصفي أو اضطراب كلام',
+    ],
+    assessment: [
+      'FAST سريع',
+      'وقت آخر مرة شوهد فيه طبيعياً — حرج لنافذة العلاج',
+      'فحص عصبي كامل (GCS، أعصاب قحفية، قوة، إحساس)',
+      'ضغط الدم، السكر، ECG',
+      'استبعاد نقص السكر — يقلد السكتة',
+    ],
+    management: [
+      'ABC + استلقاء مع رفع الرأس 30°',
+      'أكسجين إذا SpO2 < 94%',
+      'فتح وريد (تجنب ذراع الضعف)',
+      'فحص سكر فوراً — صحح النقص',
+      'لا تخفض الضغط إلا إذا > 220/120 أو تلف أعضاء',
+      'لا تعطِ Aspirin قبل صورة CT (لاستبعاد النزف)',
+      'تحويل فوري لمركز سكتة — أبلغ المركز قبل الوصول',
+      'الوقت دماغ — كل دقيقة = 2 مليون عصبون',
+    ],
+    medications: [
+      { name: 'Oxygen', dose: 'Only if SpO2 < 94%' },
+      { name: 'Dextrose 50%', dose: '20 ml IV if glucose < 70' },
+      { name: 'Aspirin', dose: 'NOT before CT' },
+    ],
+    referral: 'تحويل فوري عاجل جداً لمركز سكتة — يُفضّل خلال أول 3–4.5 ساعة لنافذة tPA. أبلغ المركز قبل الوصول. المرافقة الطبية ضرورية.',
+    documentation: 'وقت آخر مرة شوهد طبيعياً، وقت بداية الأعراض، FAST، GCS، العلامات الحيوية، السكر، الأدوية المنزلية (خاصة مميعات الدم).',
+  },
+  {
+    id: 'syncope',
+    title: 'الإغماء',
+    titleEn: 'Syncope',
+    category: 'neuro',
+    severity: 'warning',
+    preview: 'فقدان وعي مؤقت مع استعادة تلقائية. أسباب قلبية أم لاقلبية تحدد الخطر.',
+    definition: 'فقدان مؤقت للوعي مع استعادة تلقائية كاملة. الأسباب: vasovagal (الأشيع)، اضطراب نظم قلبي، انخفاض ضغط وضعي، نقص سكر، أو مرتبط بالحرارة.',
+    redFlags: [
+      'إغماء أثناء المجهود أو في وضع الاستلقاء',
+      'ألم صدري أو خفقان مصاحب',
+      'تاريخ عائلي لموت فجائي',
+      'تغيرات ECG',
+      'إصابة شديدة من السقوط',
+    ],
+    assessment: [
+      'ABC وعلامات حيوية',
+      'ECG 12 lead لكل حالة إغماء',
+      'ضغط الدم في الاستلقاء والوقوف',
+      'فحص عصبي وقلبي',
+      'قياس سكر',
+      'تاريخ الأحداث قبل وأثناء وبعد',
+    ],
+    management: [
+      'استلقاء ورفع الساقين',
+      'سوائل IV للجفاف أو الانخفاض الوضعي',
+      'علاج السبب الكامن',
+      'إذا سبب قلبي محتمل — مراقبة ECG مستمرة وتحويل',
+      'تحذير المريض من القيادة والأماكن الخطرة حتى التقييم',
+    ],
+    medications: [
+      { name: 'Normal saline', dose: '500 ml IV if dehydrated' },
+      { name: 'Dextrose', dose: 'If hypoglycemia' },
+    ],
+    referral: 'تحويل: إغماء أثناء المجهود، مصحوب بألم صدري، ECG غير طبيعي، تاريخ قلبي، إصابة شديدة، أو كبار السن. Vasovagal بسيط واضح مع ECG طبيعي يمكن تسريحه مع نصائح.',
+    documentation: 'الأحداث قبل الإغماء، مدة فقدان الوعي، علامات تشنج، ECG، العلامات الحيوية، نتيجة التقييم.',
+  },
+  {
+    id: 'seizure',
+    title: 'التشنجات',
+    titleEn: 'Seizures',
+    category: 'neuro',
+    severity: 'critical',
+    preview: 'نوبة تشنجية — حماية المريض وإعطاء Midazolam إذا تجاوزت 5 دقائق.',
+    definition: 'نوبة عصبية نتيجة نشاط كهربائي غير طبيعي في الدماغ. قد تكون متكررة (صرع معروف) أو أولى (تستدعي بحث السبب). Status epilepticus = نوبة > 5 دقائق أو نوبات متتالية بدون استعادة وعي بينها.',
+    redFlags: [
+      'النوبة الأولى في العمر',
+      'Status epilepticus (> 5 دقائق)',
+      'إصابة رأس حديثة',
+      'حمى مع تشنج (التهاب سحايا؟)',
+      'أعراض عصبية بؤرية بعد النوبة',
+    ],
+    assessment: [
+      'ABC أثناء وبعد النوبة',
+      'توقيت بداية ومدة النوبة',
+      'فحص عصبي بعد النوبة',
+      'سكر، حرارة، علامات حيوية',
+      'تاريخ صرع والأدوية والالتزام',
+    ],
+    management: [
+      'حماية الرأس وإبعاد الأشياء الخطرة',
+      'وضع جانبي بعد توقف التشنج',
+      'لا تضع شيء في الفم',
+      'فتح المجرى التنفسي وأكسجين',
+      'قياس سكر فوري — صحح النقص',
+      'إذا النوبة > 5 دقائق: Midazolam 10 مغ IM أو buccal',
+      'إذا استمرت: Diazepam 10 مغ IV بطيء',
+      'إذا Status: Phenytoin 15–20 مغ/كغ IV + تحويل ICU',
+      'ابحث عن سبب (صدمة، حمى، سكر، سحايا)',
+    ],
+    medications: [
+      { name: 'Midazolam', dose: '10 mg IM/buccal' },
+      { name: 'Diazepam', dose: '10 mg IV slow' },
+      { name: 'Dextrose 50%', dose: '20 ml IV if hypoglycemia' },
+      { name: 'Phenytoin', dose: '15–20 mg/kg IV for status' },
+    ],
+    referral: 'تحويل: النوبة الأولى، Status، إصابة شديدة، حمى، نوبات متكررة رغم العلاج، أو إذا لم يستعد الوعي الكامل خلال 30 دقيقة.',
+    documentation: 'بداية ومدة النوبة، نوعها (منتشرة/بؤرية)، أدوية الصرع المعتادة، الأدوية المُعطاة، حالة المريض بعد النوبة.',
+  },
+
+  // ======================== GI / METABOLIC ========================
+  {
+    id: 'gastro',
+    title: 'النزلات المعوية',
+    titleEn: 'Acute Gastroenteritis',
+    category: 'gi',
+    severity: 'stable',
+    preview: 'إسهال وقيء — معظمها فيروسي. التركيز على الجفاف وعزل الحالات الجماعية.',
+    definition: 'التهاب الجهاز الهضمي — إسهال (≥3 مرات/يوم) مع أو بدون قيء، غثيان، ألم بطن. معظمها فيروسي ذاتي الشفاء. البكتيري أشد وأطول. في الحج، التجمعات ترفع خطر الانتشار.',
+    redFlags: [
+      'جفاف شديد أو صدمة',
+      'دم في البراز (dysentery)',
+      'حمى عالية > 39',
+      'ألم بطن شديد مستمر',
+      'قيء دموي أو صفراوي',
+      'حالات جماعية — احتمال تفشي',
+    ],
+    assessment: [
+      'تقييم الجفاف',
+      'العلامات الحيوية',
+      'فحص بطن (حنان، دفاع، bowel sounds)',
+      'فحص البراز (دم، مخاط)',
+      'سؤال عن حالات مشابهة في المخيم',
+    ],
+    management: [
+      'إعادة الإماهة الفموية (ORS) هي الأساس — 50 مل/كغ خلال 4 ساعات',
+      'IV fluids إذا قيء مستمر أو جفاف شديد',
+      'Ondansetron 4–8 مغ للقيء الشديد',
+      'لا مضادات حيوية روتينياً',
+      'Loperamide 4 مغ ثم 2 مغ بعد كل إخراج (لا يُعطى مع حمى أو دم)',
+      'Zinc للأطفال',
+      'مضاد حيوي (Ciprofloxacin 500 مغ × 3 أيام) فقط عند الإسهال الدموي أو حمى شديدة',
+      'إبلاغ عن التجمعات الوبائية',
+    ],
+    medications: [
+      { name: 'ORS', dose: '50 ml/kg over 4h' },
+      { name: 'Ondansetron', dose: '4–8 mg IV/IM/PO' },
+      { name: 'Loperamide', dose: '4 mg then 2 mg PRN' },
+      { name: 'Ciprofloxacin', dose: '500 mg PO BID x3d (bloody)' },
+      { name: 'Normal saline', dose: '1–2 L IV if severe' },
+    ],
+    referral: 'تحويل عند: جفاف شديد غير مستجيب، إسهال دموي مع حمى شديدة، بطن حاد، كبار السن بأمراض مزمنة، اشتباه كوليرا، أو تفشي جماعي.',
+    documentation: 'عدد مرات الإسهال/القيء، وجود دم، العلامات الحيوية، درجة الجفاف، السوائل المُعطاة، وجود حالات مشابهة.',
+  },
+  {
+    id: 'glucose',
+    title: 'اضطرابات السكر',
+    titleEn: 'Hypo / Hyperglycemia / DKA',
+    category: 'gi',
+    severity: 'critical',
+    preview: 'نقص السكر يُعالج فوراً. DKA و HHS حالات خطرة عند مرضى السكري في الحج.',
+    definition: 'نقص السكر (<70 مغ/دل) قد يسبب وعي متغير وتشنج وموت سريع. ارتفاع السكر الحاد قد يكون DKA (نوع 1) أو HHS (نوع 2 مع جفاف شديد). ظروف الحج (صيام، جهد، حرارة) ترفع الخطر.',
+    redFlags: [
+      'نقص السكر مع فقدان وعي',
+      'DKA: تنفس عميق (Kussmaul)، رائحة أسيتون، قيء، جفاف',
+      'HHS: جفاف شديد مع سكر > 600',
+      'سكر > 250 مع ketones + أعراض',
+    ],
+    assessment: [
+      'قياس سكر فوري في كل حالة تغير وعي أو ضعف',
+      'فحص ketones في البول إن متوفر',
+      'العلامات الحيوية',
+      'تقييم درجة الجفاف',
+      'تاريخ الأدوية والوجبات',
+    ],
+    management: [
+      'نقص السكر + واعي: 15 غ سكر فموي (عصير أو قطع)، أعد الفحص بعد 15 دقيقة',
+      'نقص السكر + غير واعي: Dextrose 50% 20–50 مل IV، أو Glucagon 1 مغ IM',
+      'DKA: IV fluids (NS 1 L في ساعة)، Insulin 0.1 و/كغ/ساعة، راقب K',
+      'HHS: IV fluids بحذر (كمية أكبر، أبطأ)، Insulin بعد السوائل',
+      'علاج السبب المحفز (عدوى، غثيان، نسيان الدواء)',
+      'بعد استقرار نقص السكر: وجبة أو كربوهيدرات معقدة لمنع التكرار',
+    ],
+    medications: [
+      { name: 'Dextrose 50%', dose: '20–50 ml IV' },
+      { name: 'Glucagon', dose: '1 mg IM/SC' },
+      { name: 'Normal saline (DKA/HHS)', dose: '1 L in first hour' },
+      { name: 'Regular Insulin', dose: '0.1 U/kg/h IV infusion' },
+      { name: 'Potassium', dose: 'Add to fluids if K < 5.5' },
+    ],
+    referral: 'تحويل: كل DKA وHHS، نقص سكر متكرر أو من أدوية طويلة المفعول (مثل Sulfonylureas)، أي ضعف وعي لم يستعد بالكامل.',
+    documentation: 'قراءات السكر المتسلسلة، أدوية السكري، آخر وجبة، ketones، السوائل والإنسولين المُعطاة.',
+  },
+
+  // ======================== TRAUMA ========================
+  {
+    id: 'wounds',
+    title: 'الجروح',
+    titleEn: 'Wounds',
+    category: 'trauma',
+    severity: 'stable',
+    preview: 'تنظيف، تقييم العمق والتلوث، إغلاق مناسب، تطعيم الكزاز.',
+    definition: 'الجروح شائعة في الحج — من السقوط أو الازدحام. تقييم العمق، التلوث، إصابة الأعصاب/الأوعية/الأوتار، وحالة التطعيم.',
+    redFlags: [
+      'جرح عميق يصل إلى العضلة أو العظم',
+      'إصابة عصب أو وعاء أو وتر',
+      'جروح الوجه واليد والمفاصل',
+      'تلوث شديد (تراب، براز، حيواني)',
+      'ثقوب عميقة أو عضات',
+    ],
+    assessment: [
+      'الفحص الوظيفي (حركة، إحساس، نبض)',
+      'عمق وطول الجرح',
+      'تلوث أو أجسام غريبة',
+      'علامات عدوى إن كان قديم',
+      'تاريخ التطعيم الكزازي',
+    ],
+    management: [
+      'ضغط مباشر لإيقاف النزيف أولاً',
+      'تخدير موضعي (Lidocaine 1% ± Epinephrine)',
+      'تنظيف بمحلول ملحي 0.9% بكمية كبيرة (irrigation)',
+      'إزالة الأنسجة الميتة والأجسام الغريبة',
+      'إغلاق أولي (Primary) إذا نظيف و< 6 ساعات',
+      'تأجيل الإغلاق (Delayed primary) إذا ملوث أو قديم',
+      'ضماد نظيف',
+      'تطعيم كزاز إذا لم يُجدد خلال 5 سنوات أو جرح ملوث',
+      'مضاد حيوي للعضات والجروح الملوثة (Augmentin 625 مغ × 3 يوم لـ 5 أيام)',
+    ],
+    medications: [
+      { name: 'Lidocaine 1%', dose: 'Local infiltration' },
+      { name: 'Tetanus toxoid', dose: '0.5 ml IM if due' },
+      { name: 'Amoxicillin-clav', dose: '625 mg PO TID x5d' },
+    ],
+    referral: 'تحويل: جروح اليد والوجه والمفاصل الحساسة، إصابة عصب/وعاء/وتر، تلوث شديد، عدم القدرة على التنظيف الكافي، جروح معقدة أو كبيرة.',
+    documentation: 'آلية الإصابة، وصف الجرح (موقع، عمق، طول)، فحص وظيفي، تنظيف وإغلاق، تطعيم كزاز، نصائح العناية.',
+  },
+  {
+    id: 'burns',
+    title: 'الحروق',
+    titleEn: 'Burns',
+    category: 'trauma',
+    severity: 'warning',
+    preview: 'تبريد بماء جاري 20 دقيقة، تقييم المساحة والعمق، سوائل بمعادلة Parkland.',
+    definition: 'إصابة جلدية من الحرارة، كيمياء، أو كهرباء. تُصنف بالعمق (سطحي، جزئي سطحي، جزئي عميق، كامل) والمساحة (% TBSA) باستخدام قاعدة التسعات.',
+    redFlags: [
+      'حروق الوجه، اليدين، الرجلين، المفاصل، الأعضاء التناسلية',
+      'حروق الاستنشاق (سخام حول الأنف، صوت أجش، سعال)',
+      'حروق كهربائية أو كيماوية',
+      '>10% TBSA لدى البالغين',
+      'درجة ثالثة (full thickness)',
+    ],
+    assessment: [
+      'ABC — أولوية للمجرى التنفسي في حروق الاستنشاق',
+      'تقدير المساحة بقاعدة التسعات (راحة اليد = 1%)',
+      'تقدير العمق',
+      'ابحث عن إصابات مصاحبة',
+      'علامات حيوية',
+    ],
+    management: [
+      'إبعاد مصدر الحرق',
+      'تبريد بماء جاري (ليس مثلجاً) لمدة 20 دقيقة',
+      'خلع الملابس والحلي غير الملتصقة',
+      'تغطية بضماد نظيف (شاش معقم أو قطعة نظيفة)',
+      'معادلة Parkland: 4 مل × الوزن × %TBSA = كمية 24 ساعة (نصفها في أول 8 ساعات)',
+      'Ringer Lactate أفضل من Normal saline',
+      'تسكين قوي (Morphine أو Fentanyl)',
+      'تطعيم كزاز',
+      'لا تفقأ الفقاعات الكبيرة — غطِّها',
+      'لا تضع معجون أسنان أو زيت أو أي مواد منزلية',
+    ],
+    medications: [
+      { name: 'Ringer Lactate', dose: 'Parkland: 4 ml x kg x %TBSA / 24h' },
+      { name: 'Morphine', dose: '2–5 mg IV q5min PRN' },
+      { name: 'Tetanus toxoid', dose: '0.5 ml IM' },
+      { name: 'Silver sulfadiazine', dose: 'Topical (not for face)' },
+    ],
+    referral: 'تحويل: >10% TBSA، درجة ثالثة، حروق حرجة المواقع (وجه/يد/مفصل/تناسلي)، استنشاق، كهربائي، كيماوي، أو مريض مسن/طفل/مريض مزمن.',
+    documentation: 'آلية (نار/ماء/كهرباء)، وقت الإصابة، مساحة ونسبة، عمق، السوائل المُعطاة، التسكين، التطعيم.',
+  },
+  {
+    id: 'bleeding',
+    title: 'النزيف',
+    titleEn: 'Hemorrhage / Bleeding',
+    category: 'trauma',
+    severity: 'critical',
+    preview: 'ضغط مباشر، tourniquet للطرف، سوائل ودم حسب الشدة. الصدمة تحتاج تحويل فوري.',
+    definition: 'فقدان دم كبير خارجي أو داخلي. أسباب خارجية: جروح، عمليات. داخلية: بطن، صدر، كسور. صدمة نزفية = فقدان كبير مع علامات انخفاض تروية.',
+    redFlags: [
+      'ضغط < 90 انقباضي، نبض > 120',
+      'شحوب، برودة الأطراف، تعرق بارد',
+      'تشوش أو اضطراب وعي',
+      'نزيف فواني رغم الضغط',
+      'نزيف داخلي مشتبه (توتر بطن، ألم صدر)',
+    ],
+    assessment: [
+      'ABC مع التركيز على الدورة',
+      'موقع ومصدر النزيف',
+      'تقدير كمية الدم المفقود',
+      'علامات حيوية + علامات الصدمة',
+      'ابحث عن نزيف داخلي (FAST إن متوفر)',
+    ],
+    management: [
+      'ضغط مباشر على النزف — 10–15 دقيقة بلا رفع',
+      'رفع الطرف إن أمكن',
+      'tourniquet للطرف في حالة نزف مهدد للحياة لا يستجيب للضغط',
+      'Pelvic binder لإصابات الحوض',
+      'IV x2 مداخل واسعة (16–18 G)',
+      'بلعة سوائل دافئة 1 L Ringer Lactate (لا تفرط خوفاً من تخفيف dilution)',
+      'حافظ على حرارة المريض',
+      'Tranexamic acid 1 غ IV إذا خلال 3 ساعات من الإصابة',
+      'تحويل فوري لمستشفى مع دم ومرافقة طبية',
+    ],
+    medications: [
+      { name: 'Ringer Lactate', dose: '1 L IV bolus' },
+      { name: 'Tranexamic acid', dose: '1 g IV over 10 min (within 3h)' },
+      { name: 'O-negative blood', dose: 'If available for severe' },
+    ],
+    referral: 'كل نزف كبير أو غير مسيطر عليه — تحويل فوري عاجل. أبلغ المستشفى بالحالة ومتطلبات الدم.',
+    documentation: 'موقع النزف، تقدير الفقد، العلامات الحيوية المتسلسلة، السوائل المُعطاة، الاستجابة، وقت التحويل.',
+  },
+  {
+    id: 'fractures',
+    title: 'الكسور',
+    titleEn: 'Fractures',
+    category: 'trauma',
+    severity: 'warning',
+    preview: 'تثبيت، مسكن، تقييم الأعصاب والأوعية، وتحويل للمفتوح أو المعقد.',
+    definition: 'كسر العظم نتيجة صدمة أو ضعف مرضي. شائع في الحج من السقوط والازدحام. المفتوح طارئ جراحي. المغلق يحتاج تثبيت وتحويل.',
+    redFlags: [
+      'كسر مفتوح (عظم ظاهر أو جرح فوق الكسر)',
+      'إصابة عصبية أو وعائية (برودة، شحوب، غياب نبض)',
+      'تشوه واضح',
+      'متلازمة الحيز (ألم شديد متزايد رغم التسكين)',
+      'كسر العمود الفقري أو الحوض',
+    ],
+    assessment: [
+      'فحص النبض، الإحساس، الحركة في الطرف',
+      'مقارنة مع الطرف السليم',
+      'فحص الجلد فوق الكسر',
+      'تقييم المسافة والميكانيكا',
+      'استبعاد إصابات مصاحبة',
+    ],
+    management: [
+      'تثبيت في الوضعية التي وُجد عليها (لا محاولة إرجاع)',
+      'الجبيرة تغطي المفصل فوق وتحت الكسر',
+      'ثلج ورفع الطرف',
+      'تسكين (Paracetamol + NSAID، Morphine للشديد)',
+      'الكسر المفتوح: غسل بمحلول ملحي، تغطية بشاش نظيف، مضاد حيوي (Cefazolin 2 غ IV)، كزاز',
+      'لا تحاول إدخال العظم داخل الجرح',
+      'أشعة إن متوفرة، وإلا تحويل للتقييم',
+      'إذا غياب نبض — محاولة تخفيف بسيط ثم تحويل عاجل',
+    ],
+    medications: [
+      { name: 'Paracetamol', dose: '1 g PO/IV q6h' },
+      { name: 'Ibuprofen', dose: '400–600 mg PO q8h' },
+      { name: 'Morphine', dose: '2–5 mg IV PRN' },
+      { name: 'Cefazolin (open fx)', dose: '2 g IV' },
+      { name: 'Tetanus toxoid', dose: '0.5 ml IM' },
+    ],
+    referral: 'تحويل: كسور مفتوحة، معقدة، تشوه واضح، فقدان نبض/إحساس، كسور حوض/عمود فقري/ورك، وكل الكسور للتأكيد بالأشعة والعلاج النهائي.',
+    documentation: 'آلية الإصابة، فحص النبض والإحساس قبل وبعد التثبيت، التسكين، حالة الجرح (مفتوح/مغلق).',
+  },
+  {
+    id: 'crush',
+    title: 'إصابات التدافع والسحق',
+    titleEn: 'Crush Injuries',
+    category: 'trauma',
+    severity: 'critical',
+    preview: 'خطر متلازمة السحق: انحلال العضلات وفرط البوتاسيوم. السوائل قبل إزالة الضغط.',
+    definition: 'إصابة من ضغط مستمر على العضلات — شائعة في حوادث التدافع. بعد تحرير الضغط قد يحدث انحلال عضلي (rhabdomyolysis)، فرط البوتاسيوم، فشل كلوي حاد، وتوقف قلبي.',
+    redFlags: [
+      'الضحايا عالقون تحت الضغط > 15 دقيقة',
+      'عضلات متورمة متحجرة',
+      'بول داكن (myoglobin)',
+      'اضطراب نظم قلبي',
+      'فشل تنفسي أو دوراني',
+    ],
+    assessment: [
+      'ABC',
+      'تقييم المناطق المضغوطة',
+      'فحص عصبي ووعائي للأطراف',
+      'علامات حيوية + ECG (ابحث عن علامات فرط K)',
+      'علامات متلازمة الحيز',
+    ],
+    management: [
+      'IV fluids قبل إزالة الضغط إن أمكن — 1–2 L NS قبل التحرير',
+      'استمرار السوائل بمعدل 500 مل/ساعة',
+      'Sodium bicarbonate لتحميض البول والحماية من myoglobin',
+      'ECG مستمر — علامات فرط K (T طويلة، QRS واسع) تحتاج علاج فوري',
+      'علاج فرط K: Calcium gluconate 10 مل 10% IV، Insulin + Dextrose، Salbutamol',
+      'تسكين قوي',
+      'تحويل عاجل لـ ICU مع متابعة كلوية',
+      'ارفع الطرف المصاب',
+    ],
+    medications: [
+      { name: 'Normal saline', dose: '1–2 L bolus, then 500 ml/h' },
+      { name: 'Sodium bicarbonate', dose: '1 mEq/kg IV' },
+      { name: 'Calcium gluconate 10%', dose: '10 ml IV (if hyperK)' },
+      { name: 'Insulin + Dextrose', dose: '10 U + D50 50 ml (hyperK)' },
+      { name: 'Morphine', dose: '5 mg IV PRN' },
+    ],
+    referral: 'كل إصابات السحق الكبيرة تُحوَّل عاجلاً لـ ICU — حتى لو بدا المريض مستقراً. المضاعفات تأتي بعد التحرير.',
+    documentation: 'مدة الضغط، العضلات المصابة، السوائل المُعطاة قبل وبعد التحرير، ECG، لون البول، الأدوية.',
+  },
+  {
+    id: 'foot',
+    title: 'إصابات القدم والفقاعات',
+    titleEn: 'Foot Injuries & Blisters',
+    category: 'trauma',
+    severity: 'stable',
+    preview: 'شائعة جداً من المشي الطويل. العناية المبكرة تمنع العدوى والمضاعفات.',
+    definition: 'فقاعات، سحجات، والتهابات من المشي الطويل والحرارة. معظمها بسيط لكن غير المعالج قد يتطور لعدوى خطيرة خاصة في مرضى السكري.',
+    redFlags: [
+      'علامات عدوى (احمرار، تورم، حرارة، قيح)',
+      'مريض سكري مع أي جرح قدم',
+      'فقاعة دموية كبيرة',
+      'ألم شديد غير متناسب',
+      'حمى مع التهاب قدم',
+    ],
+    assessment: [
+      'فحص القدمين كاملاً بعد خلع الحذاء والجورب',
+      'فحص بين الأصابع',
+      'فحص النبض إن كان سكري',
+      'إحساس الأصابع',
+      'علامات العدوى',
+    ],
+    management: [
+      'فقاعة صغيرة سليمة: لا تفقأ، غطِ بضماد ناعم',
+      'فقاعة كبيرة مؤلمة: تفريغ معقم بإبرة نظيفة، اترك الجلد فوقها، ضماد مضاد حيوي',
+      'تمزق الجلد: تنظيف بمحلول ملحي، مرهم مضاد حيوي، ضماد',
+      'نصيحة: جوارب قطنية، أحذية مريحة مُجربة، تجفيف القدمين',
+      'مريض السكري: فحص دقيق، حد أدنى من التدخل، تحويل إذا أي التهاب',
+      'مضاد حيوي (Flucloxacillin 500 مغ × 4 يوم) للعدوى',
+      'كزاز للجروح العميقة',
+    ],
+    medications: [
+      { name: 'Flucloxacillin', dose: '500 mg PO QID (if infected)' },
+      { name: 'Paracetamol', dose: '1 g PO q6h' },
+      { name: 'Antibiotic ointment', dose: 'Topical on open areas' },
+    ],
+    referral: 'تحويل: علامات عدوى عميقة أو نظامية، قدم سكري بجرح، عدم تحسن خلال 48 ساعة، اشتباه cellulitis متقدم.',
+    documentation: 'موقع وحجم الإصابة، العدوى، حالة السكر، التدخل، النصائح.',
+  },
+  {
+    id: 'eye',
+    title: 'إصابات العين والجسم الغريب',
+    titleEn: 'Eye Injuries & Foreign Body',
+    category: 'trauma',
+    severity: 'warning',
+    preview: 'الغبار والحرارة تسبب إصابات شائعة. الإصابات النافذة والكيماوية طوارئ.',
+    definition: 'إصابات العين شائعة من الغبار والرياح والحوادث. تشمل: جسم غريب سطحي، خدش قرنية، حرق كيماوي، أو جرح نافذ. الإصابات النافذة والكيماوية طوارئ بصرية.',
+    redFlags: [
+      'جرح نافذ أو بروز محتوى العين',
+      'حرق كيماوي',
+      'فقدان حدة البصر',
+      'ألم شديد مع ضوء',
+      'عدم القدرة على تحريك العين',
+      'Hyphema (دم في غرفة العين)',
+    ],
+    assessment: [
+      'حدة البصر في كل عين (تلاوة أو عد أصابع)',
+      'فحص خارجي (جفن، ملتحمة، قرنية، بؤبؤ)',
+      'استجابة البؤبؤ للضوء',
+      'فحص حركة العين',
+      'فلوريسين للخدوش (إن متوفر)',
+    ],
+    management: [
+      'حرق كيماوي: غسل فوري بماء أو محلول ملحي 15–30 دقيقة، ثم تحويل',
+      'جسم غريب سطحي على الملتحمة: إزالة بقطعة قطن مبللة',
+      'جسم غريب في القرنية: لا تحاول إزالته — تحويل',
+      'جرح نافذ: لا تضغط، غطِ بدرع (لا شاش)، تحويل فوري',
+      'خدش قرنية: مضاد حيوي موضعي (Chloramphenicol drops)، مسكن، تغطية يوم',
+      'لا تستخدم قطرات تخدير بشكل متكرر — تؤخر الشفاء',
+      'لا تستخدم ستيرويدات موضعية إلا بإشراف',
+    ],
+    medications: [
+      { name: 'Saline (eye wash)', dose: '15–30 min continuous' },
+      { name: 'Chloramphenicol drops', dose: '1 drop q4h' },
+      { name: 'Tetracaine drops', dose: 'For exam only, not for home use' },
+      { name: 'Paracetamol', dose: '1 g PO q6h' },
+    ],
+    referral: 'تحويل: كل جرح نافذ، حرق كيماوي (بعد الغسل)، فقدان بصر، جسم غريب في القرنية، hyphema، ألم لا يستجيب، عدم تحسن خلال 24 ساعة.',
+    documentation: 'آلية الإصابة، حدة البصر المقاسة في كل عين، الفحص، العلاج الموضعي.',
+  },
+
+  // ======================== INFECTIOUS ========================
+  {
+    id: 'meningitis',
+    title: 'الحمى الشوكية',
+    titleEn: 'Meningococcal Disease',
+    category: 'infectious',
+    severity: 'critical',
+    preview: 'حمى + صداع + تصلب رقبة ± بقع جلدية. Ceftriaxone فوراً + إبلاغ + علاج وقائي للمخالطين.',
+    definition: 'عدوى بكتيرية خطيرة للسحايا. في الحج تعتبر من أخطر الأمراض الوبائية. المطعّمون (ACWY) محميون جزئياً. الأعراض: حمى، صداع، تصلب رقبة، رهاب ضوء، طفح نزفي (petechiae).',
+    redFlags: [
+      'طفح نزفي (petechiae) لا يختفي بالضغط',
+      'GCS منخفض أو تشنج',
+      'علامات صدمة (ضغط منخفض، نبض سريع)',
+      'تصلب رقبة واضح',
+      'تقيؤ مع صداع شديد',
+    ],
+    assessment: [
+      'فحص تصلب الرقبة، Kernig، Brudzinski',
+      'فحص الجلد كله (بحث عن petechiae)',
+      'GCS والفحص العصبي',
+      'علامات حيوية',
+      'تاريخ التطعيم',
+    ],
+    management: [
+      'لا تؤخر المضاد الحيوي للتصوير أو النقل — الوقت حياة',
+      'Ceftriaxone 2 غ IV/IM فوراً',
+      'Dexamethasone 10 مغ IV قبل أو مع الجرعة الأولى من المضاد',
+      'IV fluids للصدمة',
+      'عزل المريض وPPE',
+      'تحويل فوري مع مرافقة',
+      'إبلاغ فوري لصحة الحج/وزارة الصحة',
+      'علاج وقائي للمخالطين: Ciprofloxacin 500 مغ جرعة واحدة',
+    ],
+    medications: [
+      { name: 'Ceftriaxone', dose: '2 g IV/IM STAT' },
+      { name: 'Dexamethasone', dose: '10 mg IV' },
+      { name: 'Ciprofloxacin (contacts)', dose: '500 mg PO single dose' },
+      { name: 'Normal saline', dose: '1–2 L IV if shock' },
+    ],
+    referral: 'تحويل فوري جداً — طارئ. أبلغ المستشفى قبل الوصول بالاشتباه. إبلاغ وبائي إلزامي خلال 24 ساعة. حصر وعلاج المخالطين.',
+    documentation: 'الأعراض وبدايتها، الفحص (تصلب، طفح)، GCS، الأدوية المُعطاة وأوقاتها، حالة التطعيم، إبلاغ وبائي (متى ولمن).',
+  },
+  {
+    id: 'infectious',
+    title: 'الأمراض المعدية والإبلاغ',
+    titleEn: 'Notifiable Diseases & Reporting',
+    category: 'infectious',
+    severity: 'warning',
+    preview: 'معرفة الأمراض الواجب الإبلاغ عنها فوراً وطرق العزل والوقاية للطاقم.',
+    definition: 'بعض الأمراض يجب الإبلاغ عنها فوراً لوقاية التجمعات الحجية. الإبلاغ المبكر يمنع التفشي ويحمي ملايين الحجاج.',
+    redFlags: [
+      'أي مرض معدي محتمل في سياق الحج',
+      'حالات متعددة متشابهة (تفشي)',
+      'أعراض تنفسية + احتكاك إبل (MERS)',
+      'إسهال مائي غزير (كوليرا؟)',
+      'حمى نزفية',
+    ],
+    assessment: [
+      'تاريخ السفر والاحتكاك',
+      'تاريخ التطعيمات',
+      'أعراض مُنبِّهة',
+      'عزل فوري عند الاشتباه',
+      'PPE للطاقم الطبي',
+    ],
+    management: [
+      'أمراض تُبلَّغ فوراً: Meningococcal, Cholera, MERS-CoV, COVID-19, Viral hemorrhagic fever, Avian flu, Polio, Yellow fever, Measles, Diphtheria',
+      'اتصل بمكتب الصحة/مكافحة العدوى في مركزك',
+      'عزل المريض في غرفة منفصلة',
+      'PPE مناسب حسب طريق الانتقال',
+      'حصر المخالطين',
+      'علاج وقائي حيث يلزم (Ciprofloxacin للمخالطين في meningitis)',
+      'نظف الأسطح وأدوات الفحص',
+      'وثق كل شيء',
+    ],
+    medications: [
+      { name: 'Depends on disease', dose: 'Refer to protocol' },
+      { name: 'PPE', dose: 'Gown, gloves, N95, eye shield' },
+    ],
+    referral: 'كل حالة مُبلّغ عنها تُحوَّل للمستشفى المخصص. أبلغ الجهات الصحية (صحة الحج، مكافحة العدوى) فوراً ولا تؤجل.',
+    documentation: 'الأعراض، تاريخ الاحتكاك، إجراءات العزل، وقت ومن تم الإبلاغ له، قائمة المخالطين.',
+  },
+
+  // ======================== OTHER ========================
+  {
+    id: 'panic',
+    title: 'نوبات الهلع والقلق الحاد',
+    titleEn: 'Panic Attacks / Acute Anxiety',
+    category: 'other',
+    severity: 'stable',
+    preview: 'خفقان وضيق تنفس وخدر — يجب تمييزها عن الحالات القلبية والتنفسية قبل الطمأنة.',
+    definition: 'نوبة مفاجئة من الخوف الشديد مع أعراض جسدية (خفقان، ضيق تنفس، تعرق، خدر، دوخة، شعور بالموت الوشيك). شائعة في الحج من التوتر والزحام، وكثيراً ما تشابه ACS.',
+    redFlags: [
+      'حاجة لاستبعاد أسباب عضوية — لا تفترض الهلع دائماً',
+      'العمر > 40 أو عوامل خطر قلبية',
+      'ألم صدري نموذجي للذبحة',
+      'ضيق تنفس مع SpO2 منخفض',
+      'فقدان وعي سابق',
+    ],
+    assessment: [
+      'ECG (ضروري لاستبعاد قلبي)',
+      'SpO2، سكر، علامات حيوية',
+      'فحص صدري وقلبي',
+      'تاريخ نوبات سابقة',
+      'محفزات حديثة (زحام، خوف من فراق الجماعة)',
+    ],
+    management: [
+      'بعد استبعاد العضوي — الطمأنة هي الأساس',
+      'مكان هادئ، تهوية، تخفيف الاكتظاظ',
+      'تمرين التنفس البطيء (4 شهيق، 6 زفير)',
+      'لا تستخدم ورق للتنفس فيه (frequency of rebreathing not recommended)',
+      'إذا شديد ومعند: Lorazepam 1–2 مغ PO/IM',
+      'نصح بالترطيب والراحة',
+      'إحالة للدعم النفسي إن تكرر',
+    ],
+    medications: [
+      { name: 'Lorazepam', dose: '1–2 mg PO/IM' },
+      { name: 'Diazepam', dose: '5–10 mg PO (if no BZD available)' },
+    ],
+    referral: 'تحويل: شك في أسباب عضوية (قلبي، تنفسي)، نوبات متكررة، أفكار إيذاء نفس، أو حاجة لتقييم نفسي.',
+    documentation: 'الأعراض، استبعاد الأسباب العضوية (ECG، SpO2)، استجابة للطمأنة أو الدواء.',
+  },
+  {
+    id: 'falls-urinary',
+    title: 'السقوط واحتباس البول في كبار السن',
+    titleEn: 'Falls & Urinary Retention in Elderly',
+    category: 'other',
+    severity: 'warning',
+    preview: 'السقوط شائع — ابحث عن السبب والإصابة. احتباس البول يسبب ألم بطن شديد.',
+    definition: 'كبار السن في الحج عرضة للسقوط (جفاف، دوخة، ضعف، ازدحام) والاحتباس البولي (أدوية، تضخم بروستاتا، مسافات طويلة بلا حمام). كلاهما يستدعي تقييم السبب والمضاعفات.',
+    redFlags: [
+      'إصابة رأس أو فقد وعي',
+      'ألم ورك/فخذ (كسر ورك؟)',
+      'دوخة أو إغماء قبل السقوط',
+      'احتباس بول >12 ساعة',
+      'ألم بطن سفلي شديد مع مثانة ممتلئة',
+    ],
+    assessment: [
+      'سبب السقوط (قلبي، سكر، ضغط، دوخة، تعثر)',
+      'فحص إصابات (رأس، ورك، رسغ، عمود فقري)',
+      'فحص البطن — مثانة ممتلئة',
+      'مراجعة الأدوية (خاصة الخافضة)',
+      'علامات حيوية + سكر + ECG',
+    ],
+    management: [
+      'السقوط: ترك المريض في مكانه حتى فحص العمود الفقري',
+      'استبعاد إصابات خفية (كسور، نزيف داخلي)',
+      'علاج السبب (سكر، جفاف، عدوى)',
+      'تسكين مناسب',
+      'احتباس البول: قسطرة فورية (Foley 14-16 Fr)',
+      'Tamsulosin 0.4 مغ يومياً (تضخم بروستاتا)',
+      'مراجعة الأدوية المسببة (مضادات الكولين، المنوّمات)',
+      'إرشاد الحاج ومجموعته للوقاية',
+    ],
+    medications: [
+      { name: 'Paracetamol', dose: '1 g PO q6h' },
+      { name: 'Tamsulosin', dose: '0.4 mg PO daily' },
+      { name: 'Foley catheter', dose: '14–16 Fr' },
+    ],
+    referral: 'تحويل: اشتباه كسر (خاصة الورك)، إصابة رأس، فقد وعي، عدم تحمل القسطرة، احتباس متكرر، أو سقوط متكرر.',
+    documentation: 'ظروف السقوط، الإصابات، السبب، التدخل، كمية البول بعد القسطرة، نصائح الوقاية.',
+  },
+];
+
+// =================================================================
+// QUICK REFERENCES
+// =================================================================
+
+const QUICK_REFS = {
+  cpr: {
+    title: 'الإنعاش القلبي الرئوي (BLS/ACLS)',
+    titleEn: 'Cardiopulmonary Resuscitation',
+    sections: [
+      {
+        label: 'الخطوات الأساسية',
+        type: 'steps',
+        content: [
+          'تحقق من السلامة ثم اهتف بالحاج وتأكد من عدم الاستجابة',
+          'اطلب المساعدة (اتصل بالطوارئ، أحضر الدفيبرليتر AED)',
+          'افحص النبض (لا تتجاوز 10 ثواني) — إن لم تحس نبض، ابدأ الضغط',
+          'الضغط: في منتصف الصدر، عمق 5-6 سم، معدل 100-120/دقيقة',
+          'التهوية: 2 نفس بعد كل 30 ضغطة',
+          'استمر 2 دقيقة ثم افحص النبض وغيّر الشخص',
+          'شغّل AED فور وصوله واتبع تعليماته',
+        ]
+      },
+      {
+        label: 'أدوية الإنعاش',
+        type: 'meds',
+        content: [
+          { name: 'Adrenaline', dose: '1 mg IV/IO q3-5min' },
+          { name: 'Amiodarone', dose: '300 mg IV (refractory VF/VT)' },
+          { name: 'Atropine', dose: '1 mg IV q3-5min (bradycardia)' },
+          { name: 'Sodium bicarb', dose: '1 mEq/kg IV (long arrest)' },
+        ]
+      },
+      {
+        label: 'ملاحظات مهمة',
+        type: 'bullets',
+        content: [
+          'لا توقف الضغط إلا لأقل وقت ممكن',
+          'استبدال الضاغط كل 2 دقيقة',
+          'ابحث عن الأسباب القابلة للعكس (5 H و 5 T)',
+          'استمر حتى عودة الدورة أو وصول الإسعاف أو استحالة الاستمرار',
+        ]
+      }
+    ]
+  },
+  heatstroke: null, // هيفتح case مباشرة
+  drugs: {
+    title: 'جدول الأدوية الشامل',
+    titleEn: 'Comprehensive Drug Reference',
+    sections: [
+      {
+        label: 'أدوية القلب والدورة',
+        type: 'meds',
+        content: [
+          { name: 'Aspirin', dose: '300 mg PO chewed (ACS)' },
+          { name: 'Clopidogrel', dose: '300 mg loading / 75 mg daily' },
+          { name: 'Nitroglycerin', dose: '0.4 mg SL q5min x3' },
+          { name: 'Captopril', dose: '25 mg PO (HTN urgency)' },
+          { name: 'Amlodipine', dose: '5-10 mg PO' },
+          { name: 'Morphine', dose: '2-5 mg IV q5min PRN' },
+          { name: 'Adrenaline', dose: '1 mg IV (arrest) / 0.5 mg IM (anaphylaxis)' },
+          { name: 'Atropine', dose: '0.5-1 mg IV (bradycardia)' },
+        ]
+      },
+      {
+        label: 'أدوية التنفس',
+        type: 'meds',
+        content: [
+          { name: 'Salbutamol neb', dose: '5 mg q20min' },
+          { name: 'Ipratropium neb', dose: '500 mcg q20min' },
+          { name: 'Hydrocortisone', dose: '100-200 mg IV' },
+          { name: 'Prednisolone', dose: '40-50 mg PO' },
+          { name: 'Magnesium sulfate', dose: '2 g IV over 20 min (asthma)' },
+        ]
+      },
+      {
+        label: 'أدوية العصبية والتشنج',
+        type: 'meds',
+        content: [
+          { name: 'Midazolam', dose: '10 mg IM/buccal' },
+          { name: 'Diazepam', dose: '10 mg IV slow' },
+          { name: 'Phenytoin', dose: '15-20 mg/kg IV (status)' },
+          { name: 'Dextrose 50%', dose: '20-50 ml IV (hypoglycemia)' },
+          { name: 'Glucagon', dose: '1 mg IM/SC' },
+        ]
+      },
+      {
+        label: 'المضادات الحيوية',
+        type: 'meds',
+        content: [
+          { name: 'Ceftriaxone', dose: '2 g IV/IM (meningitis, severe infections)' },
+          { name: 'Amoxicillin', dose: '1 g PO TID' },
+          { name: 'Azithromycin', dose: '500 mg PO daily x3' },
+          { name: 'Ciprofloxacin', dose: '500 mg PO BID (or single dose for meningitis prophylaxis)' },
+          { name: 'Flucloxacillin', dose: '500 mg PO QID' },
+          { name: 'Augmentin', dose: '625 mg PO TID' },
+          { name: 'Cefazolin', dose: '2 g IV (open fx prophylaxis)' },
+        ]
+      },
+      {
+        label: 'المسكنات وخافضات الحرارة',
+        type: 'meds',
+        content: [
+          { name: 'Paracetamol', dose: '1 g PO/IV q6h (max 4 g/day)' },
+          { name: 'Ibuprofen', dose: '400-600 mg PO q8h' },
+          { name: 'Diclofenac', dose: '75 mg IM' },
+          { name: 'Morphine', dose: '2-5 mg IV q5min PRN' },
+          { name: 'Tramadol', dose: '50-100 mg PO/IV q6h' },
+        ]
+      },
+      {
+        label: 'أدوية الجهاز الهضمي',
+        type: 'meds',
+        content: [
+          { name: 'Ondansetron', dose: '4-8 mg IV/IM/PO' },
+          { name: 'Metoclopramide', dose: '10 mg IV/IM' },
+          { name: 'Loperamide', dose: '4 mg then 2 mg PRN' },
+          { name: 'Omeprazole', dose: '40 mg IV/PO' },
+          { name: 'ORS', dose: '50 ml/kg over 4h' },
+        ]
+      },
+      {
+        label: 'أدوية أخرى مهمة',
+        type: 'meds',
+        content: [
+          { name: 'Tranexamic acid', dose: '1 g IV over 10 min (trauma < 3h)' },
+          { name: 'Tetanus toxoid', dose: '0.5 ml IM' },
+          { name: 'Lorazepam', dose: '1-2 mg IM/PO (anxiety)' },
+          { name: 'Tamsulosin', dose: '0.4 mg PO (retention)' },
+          { name: 'Chlorpheniramine', dose: '10 mg IV/IM (allergy)' },
+          { name: 'Oseltamivir', dose: '75 mg PO BID x5d (flu < 48h)' },
+        ]
+      }
+    ]
+  },
+  emergency: {
+    title: 'أرقام ومراجع الطوارئ',
+    titleEn: 'Emergency Contacts & Resources',
+    sections: [
+      {
+        label: 'أرقام أساسية',
+        type: 'bullets',
+        content: [
+          'الهلال الأحمر السعودي: 997',
+          'الطوارئ الموحد: 911',
+          'شؤون صحة الحج: 937',
+          'مكافحة العدوى (الحرم): [املأ حسب مركزك]',
+          'مستشفى مركزي الإحالة: [املأ حسب مركزك]',
+        ]
+      },
+      {
+        label: 'مراجع سريعة',
+        type: 'bullets',
+        content: [
+          'قاعدة التسعات للحروق: الرأس 9%، كل ذراع 9%، كل ساق 18%، الجذع الأمامي 18%، الخلفي 18%، العجان 1%',
+          'Parkland: 4 ml × الوزن × %TBSA خلال 24 ساعة، نصفها في أول 8 ساعات',
+          'GCS: E4 V5 M6 (أعلى 15، إن ≤8 = غيبوبة)',
+          'CURB-65: Confusion, Urea>7, RR≥30, BP<90/60, age≥65',
+          'FAST للسكتة: Face, Arm, Speech, Time',
+          'SpO2 هدف: >94% (أو >88% في COPD)',
+          'نافذة tPA للسكتة: 3-4.5 ساعة من البداية',
+        ]
+      },
+      {
+        label: 'قائمة حقيبة الطوارئ',
+        type: 'bullets',
+        content: [
+          'جهاز ECG + جهاز دفيبرليتر AED',
+          'أنابيب IV (14, 16, 18, 20 G)',
+          'محاليل: NS 0.9%, Ringer, D5W, D50',
+          'جهاز O2 + أقنعة + أنابيب',
+          'Nebulizer + Salbutamol + Ipratropium',
+          'Airway: OPA, NPA, LMA, ETT، أنبوب ذكور وأمهات',
+          'Bag-Mask',
+          'Suction يدوي/كهربائي',
+          'جبائر متنوعة + Slings',
+          'ضمادات، شاش، tourniquet',
+          'صندوق أدوية الطوارئ (حسب القائمة)',
+          'أجهزة قياس: ضغط، سكر، حرارة، SpO2',
+        ]
+      }
+    ]
+  },
+};
+
+// =================================================================
+// RENDER
+// =================================================================
+
+let currentCategory = 'all';
+let currentSearch = '';
+
+const $ = sel => document.querySelector(sel);
+const $$ = sel => document.querySelectorAll(sel);
+
+function renderCategories() {
+  const container = $('#cats');
+  container.innerHTML = CATEGORIES.map(c => `
+    <button class="cat ${c.id === currentCategory ? 'active' : ''}" data-id="${c.id}">${c.label}</button>
+  `).join('');
+  container.querySelectorAll('.cat').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentCategory = btn.dataset.id;
+      renderCategories();
+      renderCases();
+    });
+  });
+}
+
+function renderCases() {
+  const container = $('#cases');
+  let filtered = CASES;
+
+  if (currentCategory !== 'all') {
+    filtered = filtered.filter(c => c.category === currentCategory);
+  }
+
+  if (currentSearch) {
+    const q = currentSearch.toLowerCase();
+    filtered = filtered.filter(c => {
+      const hay = [
+        c.title, c.titleEn, c.preview, c.definition,
+        ...(c.redFlags || []),
+        ...(c.management || []),
+        ...(c.medications || []).map(m => m.name + ' ' + m.dose),
+      ].join(' ').toLowerCase();
+      return hay.includes(q);
+    });
+  }
+
+  // ترتيب: critical أولاً
+  const sevOrder = { critical: 0, warning: 1, stable: 2 };
+  filtered.sort((a, b) => (sevOrder[a.severity] ?? 3) - (sevOrder[b.severity] ?? 3));
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div class="empty" style="grid-column:1/-1">
+        <div class="empty-icon">∅</div>
+        <div>لا توجد نتائج تطابق البحث</div>
+      </div>`;
+    return;
+  }
+
+  const sevLabel = { critical: 'طارئ', warning: 'تحذير', stable: 'مستقر' };
+
+  container.innerHTML = filtered.map(c => `
+    <article class="case-card" data-id="${c.id}" data-severity="${c.severity}">
+      <div class="case-head">
+        <div>
+          <div class="case-title">${c.title}</div>
+          <div class="case-title-en">${c.titleEn}</div>
+        </div>
+        <span class="sev-badge ${c.severity}">${sevLabel[c.severity]}</span>
+      </div>
+      <p class="case-preview">${c.preview}</p>
+      <div class="case-foot">
+        <span>${CATEGORIES.find(cat => cat.id === c.category)?.label || ''}</span>
+        <span class="read-more">اقرأ ←</span>
+      </div>
+    </article>
+  `).join('');
+
+  container.querySelectorAll('.case-card').forEach(card => {
+    card.addEventListener('click', () => openCase(card.dataset.id));
+  });
+}
+
+function openCase(id) {
+  const c = CASES.find(x => x.id === id);
+  if (!c) return;
+
+  $('#modalTitle').textContent = c.title;
+  $('#modalTitleEn').textContent = c.titleEn;
+
+  const body = $('#modalBody');
+  body.innerHTML = '';
+
+  // Severity alert
+  const sevAlerts = {
+    critical: { cls: 'critical', icon: '⚠', text: 'حالة طارئة — تحتاج تدخل وتحويل فوري' },
+    warning: { cls: 'warning', icon: '!', text: 'حالة تستدعي تقييم وتدبير مبكر' },
+    stable: { cls: 'info', icon: 'i', text: 'حالة مستقرة — تدبير في العيادة مع متابعة' },
+  };
+  const sa = sevAlerts[c.severity];
+  body.innerHTML += `<div class="alert ${sa.cls}" style="margin-top:20px"><span class="alert-icon">${sa.icon}</span><span class="alert-text">${sa.text}</span></div>`;
+
+  // Definition
+  body.innerHTML += `
+    <div class="section">
+      <div class="section-label">التعريف</div>
+      <p>${c.definition}</p>
+    </div>`;
+
+  // Red flags
+  if (c.redFlags && c.redFlags.length) {
+    body.innerHTML += `
+      <div class="section">
+        <div class="section-label">علامات الخطر</div>
+        <ul class="bullet-list">${c.redFlags.map(r => `<li>${r}</li>`).join('')}</ul>
+      </div>`;
+  }
+
+  // Assessment
+  if (c.assessment && c.assessment.length) {
+    body.innerHTML += `
+      <div class="section">
+        <div class="section-label">التقييم السريع</div>
+        <ul class="bullet-list">${c.assessment.map(a => `<li>${a}</li>`).join('')}</ul>
+      </div>`;
+  }
+
+  // Management
+  if (c.management && c.management.length) {
+    body.innerHTML += `
+      <div class="section">
+        <div class="section-label">التدبير الأولي</div>
+        <ol class="step-list">${c.management.map(m => `<li>${m}</li>`).join('')}</ol>
+      </div>`;
+  }
+
+  // Medications
+  if (c.medications && c.medications.length) {
+    body.innerHTML += `
+      <div class="section">
+        <div class="section-label">الأدوية والجرعات</div>
+        <table class="med-table">
+          <thead><tr><th>الدواء</th><th>الجرعة</th></tr></thead>
+          <tbody>${c.medications.map(m => `<tr><td>${m.name}</td><td>${m.dose}</td></tr>`).join('')}</tbody>
+        </table>
+      </div>`;
+  }
+
+  // Referral
+  if (c.referral) {
+    body.innerHTML += `
+      <div class="section">
+        <div class="section-label">معايير التحويل</div>
+        <div class="alert ${c.severity === 'critical' ? 'critical' : 'info'}" style="margin:0"><span class="alert-icon">↗</span><span class="alert-text">${c.referral}</span></div>
+      </div>`;
+  }
+
+  // Documentation
+  if (c.documentation) {
+    body.innerHTML += `
+      <div class="section">
+        <div class="section-label">التوثيق اللازم</div>
+        <p>${c.documentation}</p>
+      </div>`;
+  }
+
+  body.scrollTop = 0;
+  $('#modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function openQuickRef(key) {
+  const ref = QUICK_REFS[key];
+  if (!ref) {
+    if (key === 'heatstroke') openCase('heat-stroke');
+    return;
+  }
+
+  $('#modalTitle').textContent = ref.title;
+  $('#modalTitleEn').textContent = ref.titleEn;
+
+  const body = $('#modalBody');
+  body.innerHTML = '<div style="height:16px"></div>';
+
+  ref.sections.forEach(s => {
+    let inner = '';
+    if (s.type === 'steps') {
+      inner = `<ol class="step-list">${s.content.map(i => `<li>${i}</li>`).join('')}</ol>`;
+    } else if (s.type === 'bullets') {
+      inner = `<ul class="bullet-list">${s.content.map(i => `<li>${i}</li>`).join('')}</ul>`;
+    } else if (s.type === 'meds') {
+      inner = `<table class="med-table"><thead><tr><th>الدواء</th><th>الجرعة</th></tr></thead><tbody>${s.content.map(m => `<tr><td>${m.name}</td><td>${m.dose}</td></tr>`).join('')}</tbody></table>`;
+    }
+    body.innerHTML += `
+      <div class="section">
+        <div class="section-label">${s.label}</div>
+        ${inner}
+      </div>`;
+  });
+
+  body.scrollTop = 0;
+  $('#modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  $('#modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Events
+$('#search').addEventListener('input', e => {
+  currentSearch = e.target.value.trim();
+  renderCases();
+});
+
+$('#modalClose').addEventListener('click', closeModal);
+$('#modal').addEventListener('click', e => {
+  if (e.target.id === 'modal') closeModal();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+
+$$('.quick-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const action = btn.dataset.action;
+    openQuickRef(action);
+  });
+});
+
+$('#fabEmergency').addEventListener('click', () => openQuickRef('cpr'));
+
+// Theme
+const themeBtn = $('#themeBtn');
+const themeIcon = $('#themeIcon');
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  themeIcon.textContent = theme === 'dark' ? '☀' : '☾';
+}
+let currentTheme = 'light';
+themeBtn.addEventListener('click', () => {
+  currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+  applyTheme(currentTheme);
+});
+
+// Detect system preference
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  currentTheme = 'dark';
+  applyTheme('dark');
+}
+
+// Initial render
+renderCategories();
+renderCases();
+</script>
+</body>
+</html>
